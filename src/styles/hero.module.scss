@@ -1,0 +1,185 @@
+
+
+
+
+.stack {
+  position: absolute;
+  left: 32px;
+  bottom: 20px; 
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  pointer-events: auto; /* re-enable interactions for inner content */
+  z-index: 5;
+}
+
+.metaRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  height: 33px;
+}
+
+.tldr {
+  font-size: 16px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  height: 33px;
+  border-radius: 4px;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  background: linear-gradient(180deg, #BAB6B6 0%, #F4F4F4 65.15%);
+  border: 1px solid #FFFFFF;
+  box-shadow: -27px 46px 15px rgba(176,176,176,0.01), -17px 30px 14px rgba(176,176,176,0.04), -10px 17px 12px rgba(176,176,176,0.15), -4px 7px 9px rgba(176,176,176,0.26), -1px 2px 5px rgba(176,176,176,0.29);
+}
+
+.headline {
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 110px;
+  position: relative;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.lines {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lines li {
+  position: relative;
+  overflow: hidden;
+  width: max-content;
+  padding-right: 0.15em; /* accommodate italic letter overflow */
+}
+
+.lines li:global(.hovered) span { pointer-events: none; }
+
+.lines [data-hidden] {
+  pointer-events: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+}
+
+.lines [data-visible],
+.lines [data-hidden] {
+  display: inline-block;
+}
+
+.lines :global(.letter) {
+  display: inline-block;
+  will-change: transform;
+}
+.lines :global(.letter):not(.dot) {
+  background: linear-gradient(180deg, #5C5C5C 0%, #BFBFBF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  position: relative;
+  -webkit-text-stroke: 0.5px solid #959595;
+}
+.lines :global(.letter.italic):not(.dot) {
+  overflow: visible;
+  width: auto;
+  padding-right: 0.038em;
+}
+.lines :global(.letter.italic) { 
+  font-style: italic; 
+}
+.lines :global(.letter.underline) {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--text-strong-1); /* keep underline visible with gradient text */
+}
+.lines :global(.letter.dot) {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #A12222;
+  border: 1px solid #861515;
+  transform: translateY(2px); /* optical baseline alignment */
+  margin-left: -0.16em; /* reduce gap between dot and text by 3x */
+}
+
+
+
+@media (max-width: 1024px) {
+  .stack { 
+    width: min(680px, 92vw); 
+    height: auto; 
+    position: absolute; /* keep absolute positioning */
+    left: 20px; /* adjust left margin for mobile */
+    bottom: 20px; /* adjust bottom margin for mobile */
+  }
+  .headline { font-size: clamp(44px, 7vw, 72px); line-height: 1.1; }
+}
+
+@media (max-width: 375px) {
+  .stack { 
+    width: min(335px, 90vw); 
+    left: 20px; 
+    bottom: 20px; 
+    gap: 16px; /* reduce gap for mobile */
+  }
+  
+  .metaRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    height: auto;
+    order: 2; /* move meta below headline */
+  }
+  
+  .headline {
+    order: 1; /* move headline above meta */
+    font-size: clamp(32px, 8vw, 56px); 
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  
+  .tldr {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
+  
+  .cta {
+    padding: 4px 8px;
+    height: 28px;
+    font-size: 14px;
+    width: 100%; /* make button full width */
+  }
+  
+  .lines {
+    gap: 4px; /* reduce gap between lines on mobile */
+  }
+  
+  .lines li {
+    padding-right: 0.2em; /* extra space for italic overflow on mobile */
+  }
+  
+  .lines [data-hidden] {
+    bottom: 107%; /* adjust for mobile line-height changes */
+  }
+}
+
+

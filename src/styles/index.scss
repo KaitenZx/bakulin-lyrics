@@ -1,0 +1,74 @@
+/* Global styles, fonts, variables */
+
+@import "@fontsource/inter/700.css";
+@import "@fontsource/inter/700-italic.css";
+@import "@fontsource/geist-mono/200.css";
+
+:root {
+  --bg: #f3f3f3;
+  --text-strong-1: #5c5c5c;
+  --text-strong-2: #bfbfbf;
+  --muted: #757575;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-strong-1);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility typography */
+.mono {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.container {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+/* Headline gradient stroke approximation */
+.headlineStroke {
+  color: transparent;
+  background: linear-gradient(180deg, var(--text-strong-1), var(--text-strong-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 0.5px #141414;
+  text-shadow: 0 1px 0 #c3c3c3, 0 2px 0 #c7c7c7;
+}
+
+/* Button base */
+.pillBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 18px;
+  border-radius: 12px;
+  background: #fff;
+  color: #1f1f1f;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1), inset 0 0.5px 0 rgba(255,255,255,0.6);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.pillBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12), inset 0 0.5px 0 rgba(255,255,255,0.6);
+}
+
+

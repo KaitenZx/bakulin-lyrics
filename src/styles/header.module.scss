@@ -1,0 +1,39 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 32px 0 32px;
+  pointer-events: auto;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+}
+
+.logo {
+  display: none;
+}
+
+.logoImg { width: 176px; height: 20px; display: block; }
+
+.menuIcon {
+  width: 22px;
+  height: 14px;
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.menuIcon span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #a1a1a1;
+  border-radius: 1px;
+}
+.menuIcon span:nth-child(1) { top: 0; }
+.menuIcon span:nth-child(2) { bottom: 0; }
+
+
