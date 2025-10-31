@@ -85,9 +85,12 @@
   display: inline-block;
 }
 
-.lines :global(.letter) {
+.lines :global(.letter-wrapper) {
   display: inline-block;
   will-change: transform;
+}
+.lines :global(.letter) {
+  display: inline-block;
 }
 .lines :global(.letter):not(.dot) {
   background: linear-gradient(180deg, #5C5C5C 0%, #BFBFBF 100%);
@@ -95,7 +98,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  position: relative;
   -webkit-text-stroke: 0.5px solid #959595;
 }
 .lines :global(.letter.italic):not(.dot) {

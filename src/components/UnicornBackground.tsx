@@ -4,7 +4,7 @@ type UnicornBackgroundProps = {
   projectId?: string
 }
 
-const UnicornBackground: React.FC<UnicornBackgroundProps> = ({ projectId = 'uTLUl6lRI3nc6Lb87ovX' }) => {
+const UnicornBackground: React.FC<UnicornBackgroundProps> = ({ projectId = '4sruxWul9Cb6wh37h1pH' }) => {
   const src = `https://www.unicorn.studio/embed/${projectId}`
   return (
     <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'auto' }} aria-hidden>
